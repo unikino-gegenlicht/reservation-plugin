@@ -28,5 +28,7 @@ class Reservation_Plugin_Activator {
     				pickedUp bool DEFAULT FALSE
 					) $charset_collate";
 		dbDelta($query);
+		// add options to use a default limit on reservable seats
+		add_option("reservations_default_limit", 50);
 	}
 }
