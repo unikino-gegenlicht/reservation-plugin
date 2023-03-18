@@ -26,3 +26,12 @@
 if (!defined('WPINC')) {
 	die;
 }
+
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-reservation-plugin-activator.php
+ */
+function activate_reservation_plugin() {
+	require_once plugin_dir_path(__FILE__) . 'includes/class-reservation-plugin-activator.php';
+	Reservation_Plugin_Activator::activate();
+}
