@@ -21,3 +21,8 @@
  * License URI:       https://spdx.org/licenses/MIT.txt
  * Update URI:        false
  */
+
+// check if this file is called directly and abort if it is
+if (!defined('WPINC')) {
+	die;
+}
