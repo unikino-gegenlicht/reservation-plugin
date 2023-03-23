@@ -40,3 +40,12 @@ function activate_reservation_plugin(): void {
 	require_once plugin_dir_path(__FILE__) . 'includes/activator.php';
 	Reservation_Plugin_Activator::activate();
 }
+
+/**
+ * The code that runs during plugin deactivation.
+ * This action is documented in includes/deactivator.php
+ */
+function deactivate_reservation_plugin(): void {
+	require_once  plugin_dir_path(__FILE__) . 'includes/deactivator.php';
+	Reservation_Plugin_Deactivator::deactivate();
+}
