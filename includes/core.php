@@ -7,6 +7,20 @@
  * @package Reservation_Plugin
  */
 
+/**
+ * The core plugin class.
+ *
+ * This is used to define internationalization, admin-specific hooks, and
+ * public-facing site hooks.
+ *
+ * Also maintains the unique identifier of this plugin as well as the current
+ * version of the plugin.
+ *
+ * @since      1.0.0
+ * @package    Reservations
+ * @subpackage Reservations/includes
+ * @author     Jan Eike Suchard <jan+WordPressPlugin@suchard.cloud>
+ */
 class Reservation_Plugin {
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -114,7 +128,7 @@ class Reservation_Plugin {
 	 */
 	private function set_locale(): void {
 
-		$plugin_i18n = new Reservation_Plugin_i18n();
+		$plugin_i18n = new Internationalization();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 	}
