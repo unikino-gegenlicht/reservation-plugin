@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Class ReservationPlugin
+ * Class Reservation_Plugin
  *
  * This plugin class us used to define hooks of the plugin
  * @package Reservation_Plugin
  */
 
-class ReservationPlugin {
+class Reservation_Plugin {
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.

@@ -34,9 +34,9 @@ const RESERVATION_PLUGIN_VERSION = '1.0.0';
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-reservation-plugin-activator.php
+ * This action is documented in includes/activator.php
  */
 function activate_reservation_plugin(): void {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-reservation-plugin-activator.php';
+	require_once plugin_dir_path(__FILE__) . 'includes/activator.php';
 	Reservation_Plugin_Activator::activate();
 }
