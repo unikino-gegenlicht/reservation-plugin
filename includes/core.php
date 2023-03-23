@@ -100,7 +100,7 @@ class Reservation_Plugin {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/public-actions.php';
 
-		$this->loader = new Reservations_Plugin_Loader();
+		$this->loader = new Reservation_Plugin_Loader();
 	}
 
 	/**
