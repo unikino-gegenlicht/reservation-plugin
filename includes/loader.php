@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://gegenlicht.net
+ * @link       https://suchard.cloud
  * @since      1.0.0
  *
  * @package    Reservations
@@ -19,7 +19,7 @@
  *
  * @package    Reservations
  * @subpackage Reservations/includes
- * @author     Jan Eike Suchard <jan-eike.suchard@magenta.de>
+ * @author     Jan Eike Suchard <jan+WordPressPlugin@suchard.cloud>
  */
 class Reservation_Plugin_Loader {
 
