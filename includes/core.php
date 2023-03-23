@@ -142,7 +142,7 @@ class Reservation_Plugin {
 	 */
 	private function define_admin_hooks(): void {
 
-		$plugin_admin = new Reservation_Plugin_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Plugin_Backend( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'create_menu_entry');
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
@@ -158,7 +158,7 @@ class Reservation_Plugin {
 	 */
 	private function define_public_hooks(): void {
 
-		$plugin_public = new ReservationsPlugin_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Plugin_Frontend( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
