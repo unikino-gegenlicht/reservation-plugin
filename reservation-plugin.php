@@ -31,6 +31,7 @@ if (!defined('WPINC')) {
  * Current plugin version
  */
 const RESERVATION_PLUGIN_VERSION = '1.0.0';
+const RESERVATION_TABLE_NAME = 'reservations';
 
 /**
  * The code that runs during plugin activation.

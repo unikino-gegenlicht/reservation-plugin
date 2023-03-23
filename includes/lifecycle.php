@@ -34,9 +34,10 @@ class Plugin_Lifecycle {
 		// create a table for storing the reservations
 		global $wpdb;
 		$charset_collate = $wpdb->get_charset_collate();
-		$table_name = $wpdb->prefix . 'movie_reservations';
+		$table_name = $wpdb->prefix . RESERVATION_TABLE_NAME;
 		$query = "CREATE TABLE IF NOT EXISTS `$table_name` (
     				id int(9) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    				extID varchar(36) NOT NULL,
     				movieID int(9) NOT NULL REFERENCES wp_posts(ID),
     				personName varchar(255) NOT NULL,
     				email text,
