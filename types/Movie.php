@@ -77,7 +77,32 @@ class Movie {
 		return new Movie($post->ID, $post->post_title, $isPublic, $reservationEnabled, $reservableSeats);
 	}
 
-	public function freeSeats(): int {
+	/**
+	 * Get the amount of seats that are reserved for this movie by querying the reservation table
+	 * @return int
+	 */
+	public function reservedSeats(): int {
+		// access the global database connection and prepare the database query
+		global $wpdb;
+		$table_name = $wpdb->prefix . RESERVATION_TABLE_NAME;
+		// now prepare the query
+		$query = "SELECT count(seats) FROM $table_name WHERE movieID = $this->post_id";
+		$results = $wpdb->get_results($query,ARRAY_N);
+		// now get the amount of free seats by accessing the first value in the returned array
+		if ($results[0] === null) {
+			return 0;
+		} else {
+			return $results[0];
+		}
+	}
 
+	/**
+	 * Get the free seats for this movie by querying the reservation table and subtracting the count of the seats by
+	 * the count of the reservable seats
+	 * @return int
+	 */
+	public function freeSeats(): int {
+		$reservedSeats = $this->reservedSeats();
+		return $this->reservable_seats - $reservedSeats;
 	}
 }
