@@ -49,3 +49,27 @@ function deactivate_reservation_plugin(): void {
 	require_once  plugin_dir_path(__FILE__) . 'includes/deactivator.php';
 	Reservation_Plugin_Deactivator::deactivate();
 }
+
+// register the two functions as activation and deactivation hooks
+register_activation_hook(__FILE__, 'activate_reservation_plugin');
+register_deactivation_hook(__FILE__, 'deactivate_reservation_plugin');
+
+// now include the core plugin class which defines the hooks for public and
+// admin areas, and internationalization
+require plugin_dir_path(__FILE__) . 'includes/core.php';
+
+/**
+ * Execute the plugin
+ *
+ * Since everything within the plugin is registered via hooks,
+ * then kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
+ *
+ * @since    1.0.0
+ */
+function run_plugin(): void {
+	$plugin = new Reservation_Plugin();
+	$plugin->run();
+}
+
+run_plugin();
