@@ -37,7 +37,7 @@ class Plugin_Lifecycle {
 		$table_name = $wpdb->prefix . RESERVATION_TABLE_NAME;
 		$query = "CREATE TABLE IF NOT EXISTS `$table_name` (
     				id int(9) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    				extID varchar(36) NOT NULL,
+    				exetID varchar(36) NOT NULL,
     				movieID int(9) NOT NULL REFERENCES wp_posts(ID),
     				personName varchar(255) NOT NULL,
     				email text,
@@ -68,7 +68,7 @@ class Plugin_Lifecycle {
 	 */
 	public static function uninstall(): void {
 		global $wpdb;
-		$table_name = $wpdb->prefix . 'movie_reservations';
+		$table_name = $wpdb->prefix . RESERVATION_TABLE_NAME;
 		$query = "DROP TABLE $table_name";
 		dbDelta($query);
 		delete_option("reservations_default_limit");
